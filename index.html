@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Handover: finding the people the vanished were caring for, and handing their care to someone new. Prototype with fictional data.">
+<title>Handover: prototype</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<a class="skip" href="#app">Skip to content</a>
+
+<div class="demo-bar" role="region" aria-label="Prototype controls, not part of the product">
+  <div class="wrap">
+    <span class="label">Prototype <span>with fictional data. Emergencies: call 112.</span></span>
+    <nav class="roles" aria-label="View as">
+      <a href="#/" data-role="family">Family</a>
+      <a href="#/sms" data-role="sms">Report by SMS</a>
+      <a href="#/standin" data-role="standin">Stand-in</a>
+      <a href="#/responder" data-role="responder">Responder</a>
+      <a href="#/coordinator" data-role="coordinator">Coordinator</a>
+    </nav>
+    <div class="demo-tools">
+      <span>Clock <span class="clock" id="clock"></span></span>
+      <button type="button" id="plus1h">+1 hour</button>
+      <label class="switch"><input type="checkbox" id="offline"> Simulate no network</label>
+      <button type="button" id="reset">Reset demo data</button>
+      <button type="button" class="guide" id="guide-open">Demo guide</button>
+    </div>
+  </div>
+</div>
+
+<header class="site-head" id="product-head"></header>
+<main id="app" tabindex="-1"></main>
+
+<footer class="site-foot" id="site-foot">
+  <div class="wrap">
+    <span><b>Handover</b>: a prototype for a product case study. Not a live service and not affiliated with any organisation named here.</span>
+    <nav aria-label="Footer"><a href="#/safety">Safety and privacy</a><a href="#/about">About this prototype</a></nav>
+  </div>
+</footer>
+
+<dialog class="guide" id="guide" aria-labelledby="guide-title">
+  <header><h2 id="guide-title" style="margin:0">Demo guide</h2><button type="button" class="btn quiet" id="guide-close" aria-label="Close the demo guide">Close</button></header>
+  <div class="body">
+    <p class="muted small">Each scenario takes under a minute. All views share the same data, so you can follow one case from report to handover.</p>
+    <ol class="scen">
+      <li><b>Report a child left alone</b><p>Meera reports her nephew Aarav, 3. Watch the priority change as you edit the answers.</p><button class="btn small" data-act="tour" data-t="report">Start</button></li>
+      <li><b>Report by text message</b><p>The same report as an SMS conversation for basic phones.</p><button class="btn small" data-act="tour" data-t="sms">Start</button></li>
+      <li><b>Hand over as a responder</b><p>Accept Aarav (or Riya), pick a partner, check the code, hand over.</p><button class="btn small" data-act="tour" data-t="responder">Start</button></li>
+      <li><b>Be the stand-in</b><p>See the code, the care card and the 72-hour check-in.</p><button class="btn small" data-act="tour" data-t="standin">Start</button></li>
+      <li><b>Change a priority</b><p>As coordinator, raise Kabir’s case with a reason. The family is told.</p><button class="btn small" data-act="tour" data-t="override">Start</button></li>
+      <li><b>Do a phone check</b><p>Confirm the adult with Mrs D’Souza, or turn it into a visit.</p><button class="btn small" data-act="tour" data-t="phone">Start</button></li>
+      <li><b>Watch cases escalate</b><p>Move the clock forward two hours. Cases with no contact for 12 hours move up a level.</p><button class="btn small" data-act="tour" data-t="escalate">Start</button></li>
+      <li><b>Report with no network</b><p>The report waits on the phone and sends itself when the network returns.</p><button class="btn small" data-act="tour" data-t="offline">Start</button></li>
+      <li><b>Read the metrics</b><p>Safe-within-window rate, detection, speed, durability and safety, plus the hour-by-hour chart.</p><button class="btn small" data-act="tour" data-t="metrics">Start</button></li>
+      <li><b>See the live map</b><p>Cases and responders by ward. Pins never show an address.</p><button class="btn small" data-act="tour" data-t="map">Start</button></li>
+      <li><b>Simulate a surge</b><p>Five new reports arrive by web, SMS and police. Watch the triage and the live activity feed.</p><button class="btn small" data-act="tour" data-t="surge">Start</button></li>
+      <li><b>The stand-in says no</b><p>From the stand-in’s phone. The code is cancelled and the family is asked to name someone else.</p><button class="btn small" data-act="tour" data-t="decline">Start</button></li>
+      <li><b>The responder can’t make it</b><p>Release a case with a reason. It goes back to the queue and the family is told.</p><button class="btn small" data-act="tour" data-t="release">Start</button></li>
+    </ol>
+  </div>
+</dialog>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/logic.js"></script>
+<script src="assets/ui.js"></script>
+<script src="assets/family.js"></script>
+<script src="assets/responder.js"></script>
+<script src="assets/coordinator.js"></script>
+<script src="assets/phones.js"></script>
+<script src="assets/main.js"></script>
+</body>
+</html>
