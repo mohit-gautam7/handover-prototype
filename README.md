@@ -1,5 +1,7 @@
 # Handover: clickable prototype
 
+**Live demo:** https://mohit-gautam7.github.io/handover-prototype/ (or download this repository and open `index.html`; it works offline).
+
 **Open `index.html` in any modern browser** (Chrome, Edge, Firefox, Safari): double-click it, or drag it onto a browser window. There's no install, no account, no internet and no server. It is plain HTML, CSS and JavaScript (`index.html` plus the `assets` folder).
 
 Handover finds the people whose carer vanished in the Snap. It asks "Did they look after anyone?" whenever someone reports a vanished person. It then prioritises the dependent by how soon they could come to harm, sends a verified local responder, and closes the case only when a named adult takes over care with a care card.
